@@ -8,7 +8,8 @@ RUN apt update && apt install -y apt-utils unzip zip libpng-dev libmcrypt-dev gi
   curl libicu-dev libxml2-dev libssl-dev libcurl4 libcurl3-dev libsqlite3-dev libsqlite3-0
 
 # Install PHP extensions
-RUN docker-php-ext-install mysqli bcmath gd intl xml curl pdo_mysql pdo_sqlite hash zip dom session opcache
+RUN docker-php-ext-install mysqli bcmath gd intl xml curl pdo_mysql pdo_sqlite hash session opcache
+#RUN docker-php-ext-install zip
 
 # Update web root to public
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
@@ -24,7 +25,7 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN a2enmod rewrite
 
 USER root
-RUN chmod 755 /usr/local/bin/composer
+# RUN chmod 755 /usr/local/bin/composer - give this if needed
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
 
