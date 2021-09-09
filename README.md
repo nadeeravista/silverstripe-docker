@@ -1,5 +1,5 @@
 ### Step 1 - Give the the following permission
-Composer runtime is located in the host file system and volume mounted for the container. Hose file need permission for 
+Composer runtime is located in the host file system and volume mounted for the container. Host file need permission for 
 running composer command inside the container
 
 Give he the following permission for the bin/composer  
