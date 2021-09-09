@@ -19,13 +19,13 @@ volumes:
 ## Step 4 - Optional, Do if you already have a Silverstripe project
 ``docker-compose exec -w /var/www/html web composer install``
 
-##Step 5
+## Step 5  
 - Create .env file  
 ``mv .env.example .env``
 - Change content as per the database settings in the .env file
 
-##Step 6
+## Step 6. 
 ``localhost:8080/public``
     
-#### See dev options
+## See dev options. 
 http://localhost:8080/dev/
